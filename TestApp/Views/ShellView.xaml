@@ -16,8 +16,8 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Label>Hello World</Label>
-        <TextBox Grid.Row="1" behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding TestItems}" 
-                 behaviors:AutoCompleteBehavior.AutoCompleteIndicator="@" />
-        <TextBox Grid.Row="2" behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding TestItems}" />
+        <TextBox Grid.Row="1" behaviors:AutoComplete.ItemsSource="{Binding TestItems}" 
+                 behaviors:AutoComplete.Prefix="@" />
+        <TextBox Grid.Row="2" behaviors:AutoComplete.ItemsSource="{Binding TestItems}" />
     </Grid>
 </UserControl>

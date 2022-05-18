@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace WPFTextBoxAutoComplete
 {
-    public static class AutoCompleteBehavior
+    public static class AutoComplete
     {
         private static TextChangedEventHandler onTextChanged = new TextChangedEventHandler(OnTextChanged);
         private static KeyEventHandler onKeyDown = new KeyEventHandler(OnPreviewKeyDown);
@@ -18,23 +18,23 @@ namespace WPFTextBoxAutoComplete
 		/// <summary>
 		/// The collection to search for matches from.
 		/// </summary>
-        public static readonly DependencyProperty AutoCompleteItemsSource =
+        public static readonly DependencyProperty ItemsSource =
             DependencyProperty.RegisterAttached
             (
-                "AutoCompleteItemsSource",
+                "ItemsSource",
                 typeof(IEnumerable<String>),
-                typeof(AutoCompleteBehavior),
-                new UIPropertyMetadata(null, OnAutoCompleteItemsSource)
+                typeof(AutoComplete),
+                new UIPropertyMetadata(null, OnItemsSource)
             );
 		/// <summary>
 		/// Whether or not to ignore case when searching for matches.
 		/// </summary>
-		public static readonly DependencyProperty AutoCompleteStringComparison =
+		public static readonly DependencyProperty StringComparisonMode =
 			DependencyProperty.RegisterAttached
 			(
-				"AutoCompleteStringComparison",
+				"StringComparisonMode",
 				typeof(StringComparison),
-				typeof(AutoCompleteBehavior),
+				typeof(AutoComplete),
 				new UIPropertyMetadata(StringComparison.Ordinal)
 			);
 
@@ -42,31 +42,31 @@ namespace WPFTextBoxAutoComplete
 		/// What string should indicate that we should start giving auto-completion suggestions.  For example: @
         /// If this is null or empty, auto-completion suggestions will begin at the beginning of the textbox's text.
 		/// </summary>
-		public static readonly DependencyProperty AutoCompleteIndicator =
+		public static readonly DependencyProperty Prefix =
             DependencyProperty.RegisterAttached
             (
-                "AutoCompleteIndicator",
+                "Prefix",
                 typeof(String),
-                typeof(AutoCompleteBehavior),
+                typeof(AutoComplete),
                 new UIPropertyMetadata(String.Empty)
             );
 
         #region Items Source
-        public static IEnumerable<String> GetAutoCompleteItemsSource(DependencyObject obj)
+        public static IEnumerable<String> GetItemsSource(DependencyObject obj)
         {
-            object objRtn = obj.GetValue(AutoCompleteItemsSource);
+            object objRtn = obj.GetValue(ItemsSource);
             if (objRtn is IEnumerable<String>)
                 return (objRtn as IEnumerable<String>);
 
             return null;
         }
 
-        public static void SetAutoCompleteItemsSource(DependencyObject obj, IEnumerable<String> value)
+        public static void SetItemsSource(DependencyObject obj, IEnumerable<String> value)
         {
-            obj.SetValue(AutoCompleteItemsSource, value);
+            obj.SetValue(ItemsSource, value);
         }
 
-        private static void OnAutoCompleteItemsSource(object sender, DependencyPropertyChangedEventArgs e)
+        private static void OnItemsSource(object sender, DependencyPropertyChangedEventArgs e)
         {
             TextBox tb = sender as TextBox;
             if (sender == null)
@@ -86,26 +86,26 @@ namespace WPFTextBoxAutoComplete
 		#endregion
 
 		#region String Comparison
-		public static StringComparison GetAutoCompleteStringComparison(DependencyObject obj) 
+		public static StringComparison GetStringComparisonMode(DependencyObject obj) 
 		{
-			return (StringComparison)obj.GetValue(AutoCompleteStringComparison);
+			return (StringComparison)obj.GetValue(StringComparisonMode);
 		}
 
-		public static void SetAutoCompleteStringComparison(DependencyObject obj, StringComparison value) 
+		public static void SetStringComparisonMode(DependencyObject obj, StringComparison value) 
 		{
-			obj.SetValue(AutoCompleteStringComparison, value);
+			obj.SetValue(StringComparisonMode, value);
 		}
         #endregion
 
         #region Indicator
-        public static String GetAutoCompleteIndicator(DependencyObject obj)
+        public static String GetPrefix(DependencyObject obj)
         {
-            return (String)obj.GetValue(AutoCompleteIndicator);
+            return (String)obj.GetValue(Prefix);
         }
 
-        public static void SetAutoCompleteIndicator(DependencyObject obj, String value)
+        public static void SetPrefix(DependencyObject obj, String value)
         {
-            obj.SetValue(AutoCompleteIndicator, value);
+            obj.SetValue(Prefix, value);
         }
         #endregion
 
@@ -149,7 +149,7 @@ namespace WPFTextBoxAutoComplete
             if (sender == null)
                 return;
 
-            IEnumerable<String> values = GetAutoCompleteItemsSource(tb);
+            IEnumerable<String> values = GetItemsSource(tb);
             //No reason to search if we don't have any values.
             if (values == null)
                 return;
@@ -158,7 +158,7 @@ namespace WPFTextBoxAutoComplete
             if (String.IsNullOrEmpty(tb.Text))
                 return;
 
-            string indicator = GetAutoCompleteIndicator(tb);
+            string indicator = GetPrefix(tb);
             int startIndex = 0; //Start from the beginning of the line.
             string matchingString = tb.Text;
             //If we have a trigger string, make sure that it has been typed before
@@ -180,7 +180,7 @@ namespace WPFTextBoxAutoComplete
 
             Int32 textLength = matchingString.Length;
 
-			StringComparison comparer = GetAutoCompleteStringComparison(tb);
+			StringComparison comparer = GetStringComparisonMode(tb);
             //Do search and changes here.
 			String match =
 			(
