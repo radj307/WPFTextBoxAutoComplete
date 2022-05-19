@@ -12,7 +12,7 @@ defaults:
            pwsh -noninteractive -command "try {{ $ErrorActionPreference='Stop'; . '{0}' }} catch {{ Write-Error ""FAILED: $_""; throw; }} if ((Test-Path -LiteralPath variable:\LASTEXITCODE)) {{ exit $LASTEXITCODE }}"
 env:
   BUILD_CONFIGURATION:  'Release-Core'
-  REQUESTED_DOTNET_VERSION: '5.x.x'
+  REQUESTED_DOTNET_VERSION: '6.x.x'
 
 jobs:
   build:
