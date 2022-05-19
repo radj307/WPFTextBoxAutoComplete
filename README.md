@@ -5,7 +5,7 @@ This is based on Nimgoble's [WPFTextBoxAutoComplete](https://github.com/Nimgoble
 
 ### Differences
 - Shortened and simplified syntax.
-- Commit is now triggered when the textbox loses focus.
+- Commit is now triggered when the textbox loses focus, in addition to pressing the commit key.
 - Commit key can be changed from enter to another key.
 
 ## Usage
