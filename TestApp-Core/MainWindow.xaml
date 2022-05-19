@@ -1,0 +1,55 @@
+﻿<Window x:Class="TestApp_Core.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApp_Core"
+        xmlns:sys="clr-namespace:System;assembly=netstandard"
+        xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoComplete"
+        mc:Ignorable="d"
+        Title="AutoCompleteTest"
+        SizeToContent="WidthAndHeight"
+        Height="300"
+        Width="200">
+    <Window.Resources>
+        <x:Array x:Key="TestData" Type="sys:String">
+            <sys:String>Apple</sys:String>
+            <sys:String>Banana</sys:String>
+            <sys:String>Carrot</sys:String>
+            <sys:String>Dog</sys:String>
+            <sys:String>Elderberry</sys:String>
+            <sys:String>Fruit</sys:String>
+            <sys:String>Grapes</sys:String>
+            <sys:String>Honey</sys:String>
+            <sys:String>Iron</sys:String>
+        </x:Array>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0"
+                 MaxLines="10"
+                 behaviors:AutoComplete.ItemsSource="{StaticResource TestData}"
+                 behaviors:AutoComplete.Prefix="@"
+                 behaviors:AutoComplete.StringComparisonMode="OrdinalIgnoreCase"
+                 Text="@Apple
+"/>
+        <TextBox Grid.Row="1"
+                 MaxLines="10"
+                 behaviors:AutoComplete.ItemsSource="{StaticResource TestData}"
+                 Text="Apple
+"/>
+        <TextBox Grid.Row="2"
+                 MaxLines="10"
+                 behaviors:AutoComplete.ItemsSource="{StaticResource TestData}"
+                 behaviors:AutoComplete.Prefix="$"
+                 behaviors:AutoComplete.StringComparisonMode="OrdinalIgnoreCase"
+                 Text="$Apple
+"/>
+    </Grid>
+</Window>

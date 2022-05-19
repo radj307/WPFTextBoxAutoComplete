@@ -1,28 +1,69 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTextBoxAutoComplete", "WPFTextBoxAutoComplete\WPFTextBoxAutoComplete.csproj", "{CA669F4C-806B-481B-98E4-CCE97A978131}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Framework", ".NET Framework", "{AB28197C-6268-43F5-BEEC-88E937DD6886}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{1E2D2A46-A271-42A4-8B79-555799900454}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Core", ".NET Core", "{F8DC6FC3-5F67-4BFA-B80C-ADAC5525935F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6", "6", "{83860087-6AB9-4C81-BC07-1A384B493F73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTextBoxAutoComplete", ".NET-Core\WPFTextBoxAutoComplete.csproj", "{AC02FCC3-64CE-4728-9D68-E11755A5A265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.8", "4.8", "{BCEB36CB-10EC-41C6-9686-093994199A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTextBoxAutoComplete", ".NET-Framework\WPFTextBoxAutoComplete.csproj", "{CA669F4C-806B-481B-98E4-CCE97A978131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp-Framework\TestApp.csproj", "{1E2D2A46-A271-42A4-8B79-555799900454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp-Core\TestApp.csproj", "{CFB7C273-96F3-4817-93A0-CC6D5834BA66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug-Core|Any CPU = Debug-Core|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Release-Core|Any CPU = Release-Core|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC02FCC3-64CE-4728-9D68-E11755A5A265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC02FCC3-64CE-4728-9D68-E11755A5A265}.Debug-Core|Any CPU.ActiveCfg = Debug-Core|Any CPU
+		{AC02FCC3-64CE-4728-9D68-E11755A5A265}.Debug-Core|Any CPU.Build.0 = Debug-Core|Any CPU
+		{AC02FCC3-64CE-4728-9D68-E11755A5A265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC02FCC3-64CE-4728-9D68-E11755A5A265}.Release-Core|Any CPU.ActiveCfg = Release-Core|Any CPU
+		{AC02FCC3-64CE-4728-9D68-E11755A5A265}.Release-Core|Any CPU.Build.0 = Release-Core|Any CPU
 		{CA669F4C-806B-481B-98E4-CCE97A978131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA669F4C-806B-481B-98E4-CCE97A978131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA669F4C-806B-481B-98E4-CCE97A978131}.Debug-Core|Any CPU.ActiveCfg = Debug-Core|Any CPU
 		{CA669F4C-806B-481B-98E4-CCE97A978131}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA669F4C-806B-481B-98E4-CCE97A978131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA669F4C-806B-481B-98E4-CCE97A978131}.Release-Core|Any CPU.ActiveCfg = Release-Core|Any CPU
 		{1E2D2A46-A271-42A4-8B79-555799900454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E2D2A46-A271-42A4-8B79-555799900454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2D2A46-A271-42A4-8B79-555799900454}.Debug-Core|Any CPU.ActiveCfg = Debug-Core|Any CPU
 		{1E2D2A46-A271-42A4-8B79-555799900454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E2D2A46-A271-42A4-8B79-555799900454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2D2A46-A271-42A4-8B79-555799900454}.Release-Core|Any CPU.ActiveCfg = Release-Core|Any CPU
+		{CFB7C273-96F3-4817-93A0-CC6D5834BA66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFB7C273-96F3-4817-93A0-CC6D5834BA66}.Debug-Core|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFB7C273-96F3-4817-93A0-CC6D5834BA66}.Debug-Core|Any CPU.Build.0 = Debug|Any CPU
+		{CFB7C273-96F3-4817-93A0-CC6D5834BA66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFB7C273-96F3-4817-93A0-CC6D5834BA66}.Release-Core|Any CPU.ActiveCfg = Release|Any CPU
+		{CFB7C273-96F3-4817-93A0-CC6D5834BA66}.Release-Core|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83860087-6AB9-4C81-BC07-1A384B493F73} = {F8DC6FC3-5F67-4BFA-B80C-ADAC5525935F}
+		{AC02FCC3-64CE-4728-9D68-E11755A5A265} = {83860087-6AB9-4C81-BC07-1A384B493F73}
+		{BCEB36CB-10EC-41C6-9686-093994199A33} = {AB28197C-6268-43F5-BEEC-88E937DD6886}
+		{CA669F4C-806B-481B-98E4-CCE97A978131} = {BCEB36CB-10EC-41C6-9686-093994199A33}
+		{1E2D2A46-A271-42A4-8B79-555799900454} = {BCEB36CB-10EC-41C6-9686-093994199A33}
+		{CFB7C273-96F3-4817-93A0-CC6D5834BA66} = {83860087-6AB9-4C81-BC07-1A384B493F73}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FE260D5-8C0C-4818-9570-4FC0076D8DB7}
 	EndGlobalSection
 EndGlobal
