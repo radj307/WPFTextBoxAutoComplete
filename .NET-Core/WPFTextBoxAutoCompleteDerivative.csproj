@@ -1,42 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net6.0-windows</TargetFramework>
-		<Nullable>enable</Nullable>
-		<UseWPF>true</UseWPF>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Authors>Nimgoble</Authors>
-		<Company>$(Authors)</Company>
-		<Copyright>MIT</Copyright>
-		<PackageProjectUrl>https://github.com/Nimgoble/WPFTextBoxAutoComplete</PackageProjectUrl>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/radj307/WPFTextBoxAutoComplete</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<NeutralLanguage>en-CA</NeutralLanguage>
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Title>WPF TextBox AutoComplete Derivative</Title>
-		<Description>A derived version of Nimgoble's WPF TextBox AutoComplete designed for .NET Core 6 that uses shortened syntax and adds some new dependency properties.</Description>
-		<Configurations>Debug;Release;Debug-Core;Release-Core</Configurations>
-		<Version>0.0.0</Version>
-		<ExtendedVersion></ExtendedVersion>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<AssemblyAttribute Include="AssemblyAttribute.ExtendedVersion">
-			<_Parameter1>$(ExtendedVersion)</_Parameter1>
-		</AssemblyAttribute>
-	</ItemGroup>
-	
-	<ItemGroup>
-		<None Include="..\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="AssemblyAttribute" Version="0.0.0" />
-	</ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Nimgoble</Authors>
+    <Company>$(Authors)</Company>
+    <Copyright>MIT</Copyright>
+    <PackageProjectUrl>https://github.com/Nimgoble/WPFTextBoxAutoComplete</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/radj307/WPFTextBoxAutoComplete</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <NeutralLanguage>en-CA</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>WPF TextBox AutoComplete Derivative</Title>
+    <Description>A derived version of Nimgoble's WPF TextBox AutoComplete designed for .NET Core 6 that uses shortened syntax and adds some new dependency properties.</Description>
+    <Configurations>Debug;Release;Debug-Core;Release-Core</Configurations>
+    <Version>0.0.0</Version>
+    <ExtendedVersion>0.0.0</ExtendedVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="AssemblyAttribute.ExtendedVersion">
+      <_Parameter1>$(ExtendedVersion)</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AssemblyAttribute" Version="0.0.0" />
+  </ItemGroup>
 </Project>
