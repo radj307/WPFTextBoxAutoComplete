@@ -134,9 +134,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\.NET-Framework\WPFTextBoxAutoComplete.csproj">
+    <ProjectReference Include="..\.NET-Framework\WPFTextBoxAutoCompleteDerivative.csproj">
       <Project>{ca669f4c-806b-481b-98e4-cce97a978131}</Project>
-      <Name>WPFTextBoxAutoComplete</Name>
+      <Name>WPFTextBoxAutoCompleteDerivative</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

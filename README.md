@@ -1,57 +1,70 @@
-WPFTextBoxAutoComplete
-======================
+# WPFTextBoxAutoCompleteDerivative
 
-An attached behavior for WPF's TextBox control that provides auto-completion suggestions from a given collection
+Extends the WPF `TextBox` control with auto-completion suggestions.  
+This is based on Nimgoble's [WPFTextBoxAutoComplete](https://github.com/Nimgoble/WPFTextBoxAutoComplete), and is designed for .NET Core 6  
 
-## How to use this library:
+### Differences
+- Shortened and simplified syntax.
+- Commit is now triggered when the textbox loses focus.
+- Commit key can be changed from enter to another key.
 
-1. Install the package via NuGet
+## Usage
+
+ 1. Install the package via NuGet
 
 	```
-		PM> Install-Package WPFTextBoxAutoComplete
+		PM> Install-Package WPFTextBoxAutoCompleteDerivative
 	```
 
-2. Add a reference to the library in your view
+ 2. Add a reference to the library in the `.xaml` file you want to use it in.
 
-	``` csharp
-		xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoComplete"
+	```csharp
+		xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoCompleteDerivative"
 	```
 	
-3. Create a textbox and bind the "AutoCompleteItemsSource" to a collection of ```IEnumerable<String>```
+ 3. Create a textbox and bind the ***ItemsSource*** property to any type that implements `IEnumerable<String>`.
 
+	```csharp
+		<TextBox 
+			Width="250"
+			HorizontalAlignment="Center"
+			Text="{Binding TestText, UpdateSourceTrigger=PropertyChanged}"
+			behaviors:AutoComplete.ItemsSource="{Binding TestItems}"
+		/>
+	```
+	
+### Properties
+
+| Property               | Type                  | Default             | Description                                                                                             |
+|------------------------|-----------------------|---------------------|---------------------------------------------------------------------------------------------------------|
+| `ItemsSource`          | `IEnumerable<string>` | `null`              | Sets the source for auto completion suggestions.                                                        |
+| `StringComparisonMode` | `StringComparison`    | `OrdinalIgnoreCase` | Changes the string comparison type used when matching user input to possible suggestions.               |
+| `Prefix`               | `char?`               | `null`              | When set to a non-null character, that character must be entered by the user for suggestions to appear. |
+| `CommitKey`            | `Key`                 | `Enter`             | This changes which key the user should press to select a suggestion.                                    |
+
+
+### Examples
+	
+	Case-Sensitive Matching
+	```csharp
+		<TextBox 
+			 Width="250"
+			 HorizontalAlignment="Center"
+			 Text="{Binding TestText, UpdateSourceTrigger=PropertyChanged}" 
+			 behaviors:AutoComplete.ItemsSource="{StaticResource TestData}"
+			 behaviors:AutoComplete.StringComparisonMode="Ordinal"
+		/>
+	```
+	
+	Requires '@' prefix to show suggestions.
 	``` csharp
 		<TextBox 
 			Width="250"
 			HorizontalAlignment="Center"
 			Text="{Binding TestText, UpdateSourceTrigger=PropertyChanged}" 
-			behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding TestItems}" 
+			behaviors:AutoComplete.ItemsSource="{Binding TestItems}"
+			behaviors:AutoComplete.Prefix="@"
 		/>
 	```
 	
-4. (Optional) Set the "AutoCompleteStringComparison" property, which is of type <a href='https://msdn.microsoft.com/en-us/library/system.stringcomparison(v=vs.110).aspx'>StringComparison</a>
-
-	``` csharp
-		<TextBox 
-			Width="250"
-			HorizontalAlignment="Center"
-			Text="{Binding TestText, UpdateSourceTrigger=PropertyChanged}" 
-			behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding TestItems}" 
-			behaviors:AutoCompleteBehavior.AutoCompleteStringComparison="InvariantCultureIgnoreCase"
-		/>
-	```
 	
-5. (Optional) Set the "AutoCompleteIndicator" property, which is a String.  This is used to indicate to the behavior that it should start making auto-completion suggestions.
-
-	``` csharp
-		<TextBox 
-			Width="250"
-			HorizontalAlignment="Center"
-			Text="{Binding TestText, UpdateSourceTrigger=PropertyChanged}" 
-			behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding TestItems}" 
-			behaviors:AutoCompleteBehavior.AutoCompleteIndicator="@"
-		/>
-	```
-    
-Now, every time the "TestText" property of your datacontext is changed, WPFTextBoxAutoComplete will provide you with auto-completion suggestions.  To accept a suggestion, just hit "enter".
-
-		

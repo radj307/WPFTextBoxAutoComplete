@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp_Core"
         xmlns:sys="clr-namespace:System;assembly=netstandard"
-        xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoComplete"
+        xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoCompleteDerivative"
         mc:Ignorable="d"
         Title="AutoCompleteTest"
         SizeToContent="WidthAndHeight"
@@ -36,7 +36,7 @@
                  MaxLines="10"
                  behaviors:AutoComplete.ItemsSource="{StaticResource TestData}"
                  behaviors:AutoComplete.Prefix="@"
-                 behaviors:AutoComplete.StringComparisonMode="OrdinalIgnoreCase"
+                 behaviors:AutoComplete.StringComparisonMode="Ordinal"
                  Text="@Apple
 "/>
         <TextBox Grid.Row="1"
@@ -48,7 +48,6 @@
                  MaxLines="10"
                  behaviors:AutoComplete.ItemsSource="{StaticResource TestData}"
                  behaviors:AutoComplete.Prefix="$"
-                 behaviors:AutoComplete.StringComparisonMode="OrdinalIgnoreCase"
                  Text="$Apple
 "/>
     </Grid>

@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Core", ".NET Core", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6", "6", "{83860087-6AB9-4C81-BC07-1A384B493F73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTextBoxAutoComplete", ".NET-Core\WPFTextBoxAutoComplete.csproj", "{AC02FCC3-64CE-4728-9D68-E11755A5A265}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTextBoxAutoCompleteDerivative", ".NET-Core\WPFTextBoxAutoCompleteDerivative.csproj", "{AC02FCC3-64CE-4728-9D68-E11755A5A265}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.8", "4.8", "{BCEB36CB-10EC-41C6-9686-093994199A33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTextBoxAutoComplete", ".NET-Framework\WPFTextBoxAutoComplete.csproj", "{CA669F4C-806B-481B-98E4-CCE97A978131}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTextBoxAutoCompleteDerivative", ".NET-Framework\WPFTextBoxAutoCompleteDerivative.csproj", "{CA669F4C-806B-481B-98E4-CCE97A978131}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp-Framework\TestApp.csproj", "{1E2D2A46-A271-42A4-8B79-555799900454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp-Core\TestApp.csproj", "{CFB7C273-96F3-4817-93A0-CC6D5834BA66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp-Core\TestApp.csproj", "{CFB7C273-96F3-4817-93A0-CC6D5834BA66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

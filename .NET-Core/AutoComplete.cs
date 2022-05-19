@@ -65,7 +65,7 @@ namespace WPFTextBoxAutoComplete
                 "StringComparisonMode",
                 typeof(StringComparison),
                 typeof(AutoComplete),
-                new UIPropertyMetadata(StringComparison.Ordinal)
+                new UIPropertyMetadata(StringComparison.OrdinalIgnoreCase)
             );
         public static StringComparison GetStringComparisonMode(DependencyObject obj) => (StringComparison)obj.GetValue(StringComparisonMode);
         public static void SetStringComparisonMode(DependencyObject obj, StringComparison value) => obj.SetValue(StringComparisonMode, value);
