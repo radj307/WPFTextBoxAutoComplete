@@ -4,10 +4,10 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>Nimgoble</Authors>
+    <Authors>Nimgoble, radj307</Authors>
     <Company>$(Authors)</Company>
     <Copyright>MIT</Copyright>
-    <PackageProjectUrl>https://github.com/Nimgoble/WPFTextBoxAutoComplete</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/radj307/WPFTextBoxAutoComplete</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/radj307/WPFTextBoxAutoComplete</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
